@@ -78,7 +78,7 @@
         Mail_MK: Mail_MK {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&none &kp M &kp I &kp S &kp A &kp W &kp A &kp DOT &kp K &kp O &kp AT &kp J &kp C &kp I &kp T &kp Y &kp DOT &kp M &kp A &kp E &kp D &kp A &kp DOT &kp C &kp O &kp DOT &kp J &kp P>;
+            bindings = <&none &kp M &kp I &kp S &kp A &kp W &kp A &kp DOT &kp K &kp O &kp LEFT_BRACKET &kp J &kp C &kp I &kp T &kp Y &kp DOT &kp M &kp A &kp E &kp D &kp A &kp DOT &kp C &kp O &kp DOT &kp J &kp P>;
             label = "MAIL_MK";
         };
 
