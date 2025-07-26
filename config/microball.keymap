@@ -50,6 +50,42 @@
             bindings = <&to 0 &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
             label = "TO_LAYER_0";
         };
+
+        press_kakko: press_kakko {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(ASTRK) &kp RPAR>;
+            label = "PRESS_KAKKO";
+        };
+
+        PCPass: PCPass {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp HASH &kp DOLLAR &kp LS(P) &kp R &kp O &kp F &kp E &kp S &kp S &kp O &kp R &kp N0 &kp N8 &kp N2 &kp N2>;
+            label = "PCPASS";
+        };
+
+        Mail_MK: Mail_MK {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&none &kp M &kp I &kp S &kp A &kp W &kp A &kp DOT &kp K &kp O &kp AT &kp J &kp C &kp I &kp T &kp Y &kp DOT &kp M &kp A &kp E &kp D &kp A &kp DOT &kp C &kp O &kp DOT &kp J &kp P>;
+            label = "MAIL_MK";
+        };
+
+        Open_Exproler: Open_Exproler {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_WIN &kp E>;
+            label = "OPEN_EXPROLER";
+        };
+
+        Ctrl_Alt_Del: Ctrl_Alt_Del {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&none>, <&macro_press>;
+
+            label = "CTRL_ALT_DEL";
+        };
     };
 
     behaviors {
@@ -69,10 +105,10 @@
 
         default_layer {
             bindings = <
-&mt Q ESCAPE      &kp W         &kp E         &kp R        &kp T                                        &kp Y        &kp U  &kp I      &kp O    &mt P BSPC
-&kp A             &kp S         &kp D         &kp F        &kp G        &mkp MB3         &kp MINUS      &kp H        &kp J  &kp K      &kp L    &kp AMPERSAND
-&mt LEFT_SHIFT Z  &kp X         &kp C         &kp V        &kp B        &kp SQT          &kp SEMICOLON  &kp N        &kp M  &kp COMMA  &kp DOT  &kp SLASH
-&mt LCTRL LCTRL   &kp LEFT_WIN  &kp LEFT_ALT  &lt 3 LANG1  &lt 2 SPACE  &lt 1 LANG2      &kp BACKSPACE  &lt 1 ENTER                             &lt 6 DELETE
+&mt Q ESCAPE      &kp W         &kp E         &kp R        &kp T                                                  &kp Y        &kp U  &kp I      &kp O    &kp P
+&kp A             &kp S         &kp D         &kp F        &kp G        &mkp MB3         &press_kakko             &kp H        &kp J  &kp K      &kp L    &kp MINUS
+&mt LEFT_SHIFT Z  &kp X         &kp C         &kp V        &kp B        &kp SQT          &kp LS(INTERNATIONAL_1)  &kp N        &kp M  &kp COMMA  &kp DOT  &kp SLASH
+&mt LCTRL LCTRL   &kp LEFT_WIN  &kp LEFT_ALT  &lt 3 LANG1  &lt 2 SPACE  &lt 1 LANG2      &kp BACKSPACE            &lt 1 ENTER                             &lt 6 DELETE
             >;
 
             sensor-bindings = <&scroll_up_down>;
@@ -89,7 +125,7 @@
 
         NUM {
             bindings = <
-&kp ESCAPE                 &kp SEMICOLON     &kp ASTERISK  &kp SLASH   &kp EXCLAMATION                                            &kp LS(MINUS)   &kp N7        &kp N8        &kp N9        &kp ASTERISK
+&kp ESCAPE                 &kp SEMICOLON     &kp ASTERISK  &kp SLASH   &kp EXCLAMATION                                            &kp LS(MINUS)   &kp N7        &kp N8        &kp N9        &kp LS(ASTRK)
 &kp TAB                    &kp LS(NUMBER_6)  &kp MINUS     &kp COLON   &kp PERIOD                &mkp MB3          &kp MINUS      &kp LS(INT_RO)  &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp LEFT_PARENTHESIS
 &mt LEFT_SHIFT LEFT_SHIFT  &kp LEFT_BRACKET  &kp HASH      &kp DOLLAR  &kp LS(NON_US_BACKSLASH)  &kp ASTERISK      &kp PLUS       &kp N0          &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp QUESTION
 &trans                     &trans            &trans        &trans      &trans                    &trans            &kp BACKSPACE  &kp ENTER                                                 &kp DEL
@@ -100,10 +136,10 @@
 
         ARROW {
             bindings = <
-&kp ESCAPE      &kp LC(LS(TAB))         &kp UP_ARROW    &kp LC(TAB)              &trans                       &trans  &trans          &kp UP_ARROW  &trans           &trans
-&kp HOME        &kp LEFT_ARROW          &kp DOWN_ARROW  &kp RIGHT_ARROW          &kp END  &trans      &trans  &trans  &kp LEFT_ARROW  &kp DOWN      &kp RIGHT_ARROW  &trans
-&kp LEFT_SHIFT  &kp LG(LS(LEFT_ARROW))  &trans          &kp LG(LS(RIGHT_ARROW))  &trans   &trans      &trans  &trans  &trans          &trans        &trans           &trans
-&trans          &trans                  &trans          &trans                   &trans   &trans      &trans  &trans                                                 &trans
+&kp ESCAPE      &kp LC(LS(TAB))         &kp UP_ARROW    &kp LC(TAB)              &trans                       &trans  &trans          &kp UP_ARROW  &trans           &PCPass
+&kp HOME        &kp LEFT_ARROW          &kp DOWN_ARROW  &kp RIGHT_ARROW          &kp END  &trans      &trans  &trans  &kp LEFT_ARROW  &kp DOWN      &kp RIGHT_ARROW  &Mail_MK
+&kp LEFT_SHIFT  &kp LG(LS(LEFT_ARROW))  &trans          &kp LG(LS(RIGHT_ARROW))  &trans   &trans      &trans  &trans  &trans          &trans        &trans           &Open_Exproler
+&trans          &kp LEFT_WIN            &trans          &trans                   &trans   &trans      &trans  &trans                                                 &kp LC(LA(LS(DEL)))
             >;
         };
 
