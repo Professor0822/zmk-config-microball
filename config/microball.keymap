@@ -29,12 +29,12 @@
 
         muhennkann {
             bindings = <&to_layer_0 LANGUAGE_2>;
-            key-positions = <11 10>;
+            key-positions = <25 24>;
         };
 
         double_quotation {
             bindings = <&kp LANGUAGE_1>;
-            key-positions = <20 21>;
+            key-positions = <14 13>;
         };
 
         eq {
@@ -50,6 +50,11 @@
         MOUSE_MODE2 {
             bindings = <&to 0>;
             key-positions = <20 19>;
+        };
+
+        lang2 {
+            bindings = <&kp LANGUAGE_2>;
+            key-positions = <26 25>;
         };
     };
 
